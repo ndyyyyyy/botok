@@ -1,34 +1,19 @@
-from nevek import *
-#import pickle
-#import os
-nev = input("Mi az elso neved?---->")
-nev2 = input("Mi a második neved?--->")
-x = nev[0].upper() + nev[1:].lower()
-y = nev2[0].upper() + nev2[1:].lower()
-xy = x + y
-print(xy)
+import os
 
-d = "emberneve = "
-
-
-n = open("nevek.py", "w")
-
-nev_1 = n.write( str(d) + str([xy]))
-
-n.close()
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 nev = input("Mi az elso neved?---->")
 nev2 = input("Mi a második neved?--->")
+link = input("Írd ide a linket---->")
 x = nev[0].upper() + nev[1:].lower()
 y = nev2[0].upper() + nev2[1:].lower()
-xy = x + y
-print(xy)
+link2 = link.lower()
+xy = x + " " + y
+xylink = " ---> " + link2
+d = "Nev -->  "
 
 
-n = open("nevek.py", "w")
-
-nev_2 = n.write( str(d) + str([xy]))
-
-
-d.append(nev_2)
-n.close()
+with open("nevek.txt","r+") as f:
+    data = f.read()
+    f.write(d + xy + xylink + "\n")   
+    d.close()  
