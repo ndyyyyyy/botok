@@ -15,25 +15,41 @@ d = "Nev -->  "
 
 
 #def nevvissza(link, uzenet="Ez a link mar letezik, probald ujra!"):
+
 with open("nevek.txt", "r") as f:
     data = f.read()
-   # print(data)
-    temp = data.find(xy)
-    link33 = data[temp + len(xy) + 6: data.find("Nev", temp)]
-   # print(link33)
+    #temp1 = data.find(xylink)
+    #linklength = data[temp1 + len(link2)]
+   # print(linklength)
+
+    # print(data)
+    #temp = data.find(xy)
+    #link33 = data[temp + len(xy) + 6: data.find("Nev", temp)]
+    #d_finder = data.find(xy)
+    # print(link33)
     f.close()   
 
-if link2 == link33:
-    print("MAr haszanalt")
+#if xy in data:
+#   print("Ez a nev mar hasznalt")
+                                    ### 1 nevhez tobb link, 1 linkhez 1 ember
+
+if xylink in data:
+    print("Ez a link sajnos már használva van!")
+    print("Próbálja újra")
+
     
 else:
   with open("nevek.txt","r+") as f:
      data = f.read()
      f.write(d + str(xy) + xylink + "\n")   
      f.close()  
+     print("Sikeresen hozza adva")
 
-    # getlink = link.readlines(link)
-    #if link in getlink:
-     #  nevvissza(print(uzenet))
-   # f.close()
+
+help = input('Kell segítség?- ha igen írd ide, hogy "help"-->')
+print(help)
+
+if help =="help":
+    print("f")
+
 
