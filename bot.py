@@ -52,4 +52,4 @@ print(help)
 if help =="help":
     print("f")
 
-
+#Nev -->  F F ---> https://www.facebook.com/profile.php?id=100082492849171
