@@ -1,4 +1,3 @@
-
 import os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -8,24 +7,36 @@ nev2 = input("Mi a második neved?--->")
 link = input("Írd ide a linket---->")
 x = nev[0].upper() + nev[1:].lower()
 y = nev2[0].upper() + nev2[1:].lower()
+link2 = link.lower()
 xy = x + " " + y
-xylink = " ---> " + link.lower() 
+xylink = " ---> " + link2
 d = "Nev -->  "
 
 
-with open("nevek.txt", "r+") as f:
+
+#def nevvissza(link, uzenet="Ez a link mar letezik, probald ujra!"):
+
+with open("nevek.txt", "r") as f:
     data = f.read()
-    f.write(d + xy + "\n")
-    linkek = f.write(xylink + "\n")
-    f.close()
+    #temp1 = data.find(xylink)
+    #linklength = data[temp1 + len(link2)]
+   # print(linklength)
 
+    # print(data)
+    #temp = data.find(xy)
+    #link33 = data[temp + len(xy) + 6: data.find("Nev", temp)]
+    #d_finder = data.find(xy)
+    # print(link33)
+    f.close()   
 
+if xylink in data:
+    print("Ez a link sajnos már használva van!")
+    print("")
 
-
-with open("nevek.txt", "r") as d:
-    Lines = d.readlines(linkek)
-    if Lines == linkek:
-        print("A link már létezik, próbált ujra!")
-    else:
-        print("Sikeres bejelentkezés!")    
-    d.close()        
+    
+else:
+  with open("nevek.txt","r+") as f:
+     data = f.read()
+     f.write(d + str(xy) + xylink + "\n")   
+     f.close()  
+     print("Sikeresen hozza adva")
