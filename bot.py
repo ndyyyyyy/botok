@@ -14,7 +14,6 @@ d = "Nev -->  "
 
 
 
-#def nevvissza(link, uzenet="Ez a link mar letezik, probald ujra!"):
 
 with open("nevek.txt", "r") as f:
     data = f.read()
@@ -29,9 +28,6 @@ with open("nevek.txt", "r") as f:
     # print(link33)
     f.close()   
 
-#if xy in data:
-#   print("Ez a nev mar hasznalt")
-                                    ### 1 nevhez tobb link, 1 linkhez 1 ember
 
 if xylink in data:
     print("Ez a link sajnos már használva van!")
@@ -45,11 +41,26 @@ else:
      f.close()  
      print("Sikeresen hozza adva")
 
+szabalyzat = "ect...ect...ect..."
 
-help = input('Kell segítség?- ha igen írd ide, hogy "help"-->')
-print(help)
 
-if help =="help":
-    print("f")
+i=1
+
+while i < 35455559789789789789798789:
+    help = input('Kell segítség?- "Igen" vagy "Nem"-->')
+    if help.lower() =="igen":
+        
+        print(szabalyzat)
+        break
+
+    if help.lower() =="nem":
+        print("A program sikeresen lefutott!!")
+        break
+       
+
+    else:
+        i += 1
+        
 
 #Nev -->  F F ---> https://www.facebook.com/profile.php?id=100082492849171
+      
