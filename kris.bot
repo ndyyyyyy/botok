@@ -2,6 +2,12 @@ import os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+
+with open("nevek.txt", "r") as f:
+    data = f.read()
+    f.close()
+
+    
 nev = input("Mi az elso neved?---->")
 if nev == "fk=%!876)=//=UVhH=(%!§dkdj78756)":
   print("dd")
@@ -14,18 +20,12 @@ elif nev != "fk=%!876)=//=UVhH=(%!§dkdj78756)":
  xy = x + " " + y
  xylink = " ---> " + link2
  d = "Nev -->  "
-
-
-
- with open("nevek.txt", "r") as f:
-    data = f.read()
-    f.close()   
-
+   
 
 
  if xylink in data:
     print("Ez a link sajnos már használva van!")
-    print("Próbálja újra")
+    print("Próbálja újra!")
 
     
  else:
@@ -33,7 +33,7 @@ elif nev != "fk=%!876)=//=UVhH=(%!§dkdj78756)":
      data = f.read()
      f.write(d + str(xy) + xylink + "\n")   
      f.close()  
-     print("Sikeresen hozza adva")
+     print("Sikeresen hozza adva!")
 
 
 
