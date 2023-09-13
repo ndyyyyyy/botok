@@ -10,7 +10,7 @@ with open("nevek.txt", "r") as f:
     
 nev = input("Mi az elso neved?---->")
 if nev == "fk=%!876)=//=UVhH=(%!§dkdj78756)":
-  print("dd")
+  print("Admin")
 elif nev != "fk=%!876)=//=UVhH=(%!§dkdj78756)":
  nev2 = input("Mi a második neved?--->")
  link = input("Írd ide a linket---->")
