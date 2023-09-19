@@ -15,7 +15,7 @@ elif nev != "fk=%!876)=//=UVhH=(%!§dkdj78756)":
  nev2 = input("Mi a második neved?--->")
  x = nev[0].upper() + nev[1:].lower()
  y = nev2[0].upper() + nev2[1:].lower()
- xy = x + " " + y
+ xy = x + y
  d = "Nev-->"
    
 
@@ -56,7 +56,7 @@ while i < 9999999999999999:
       nev22 = input("Mi a második neved?--->")
       xd = nev11[0].upper() + nev11[1:].lower()
       yd = nev22[0].upper() + nev22[1:].lower()
-      xyd = xd + " " + yd
+      xyd = xd + yd
       print(xyd)
       d = "Nev-->"
    
@@ -66,7 +66,7 @@ while i < 9999999999999999:
         adataimm = data.find(xyd)
         print(len(xyd))
         print(adataimm)
-        getdata = data[adataimm : adataimm+len(xyd)]
+        getdata = data[adataimm : adataimm+len(xyd) + "egy geci"]
         print(getdata)
         f.close()
         break
@@ -79,6 +79,3 @@ while i < 9999999999999999:
     i += 1
 
    
-       
-
-#Nev -->  F F ---> https://www.facebook.com/profile.php?id=100082492849171
