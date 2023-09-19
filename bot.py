@@ -66,7 +66,7 @@ while i < 9999999999999999:
         adataimm = data.find(xyd)
         print(len(xyd))
         print(adataimm)
-        getdata = data[adataimm : adataimm+len(xyd) + "egy geci"]
+        getdata = data[adataimm : adataimm+len(xyd) + "egy...."]
         print(getdata)
         f.close()
         break
