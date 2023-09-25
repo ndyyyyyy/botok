@@ -6,18 +6,23 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 with open("nevek.txt", "r") as f:
     data = f.read()
     f.close()
+login_reg = input("Belépés vagy Regisztráció?-->")
 
-    
-nev = input("Mi az elso neved?---->")
-if nev == "fk=%!876)=//=UVhH=(%!§dkdj78756)":
-  print("Admin")
-elif nev != "fk=%!876)=//=UVhH=(%!§dkdj78756)":
- nev2 = input("Mi a második neved?--->")
- x = nev[0].upper() + nev[1:].lower()
- y = nev2[0].upper() + nev2[1:].lower()
- xy = x + y
- d = "Nev-->"
-   
+if login_reg=="Regisztráció":
+  
+
+if login_reg=="Belépés":    
+ nev = input("Mi az elso neved?---->")
+ if nev == "fk=%!876)=//=UVhH=(%!§dkdj78756)":
+   print("Admin")
+ elif nev != "fk=%!876)=//=UVhH=(%!§dkdj78756)":
+  nev2 = input("Mi a második neved?--->")
+  x = nev[0].upper() + nev[1:].lower()
+  y = nev2[0].upper() + nev2[1:].lower()
+  xy = x + y
+  d = "Nev-->"
+
+
 
 ix = 0
 while ix < 999999999:
@@ -66,7 +71,7 @@ while i < 9999999999999999:
         adataimm = data.find(xyd)
         print(len(xyd))
         print(adataimm)
-        getdata = data[adataimm : adataimm+len(xyd) + "egy...."]
+        getdata = data[adataimm : adataimm+len(xyd)]
         print(getdata)
         f.close()
         break
