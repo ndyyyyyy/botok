@@ -6,12 +6,37 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 with open("nevek.txt", "r") as f:
     data = f.read()
     f.close()
-login_reg = input("Belépés vagy Regisztráció?-->")
+login_reg = input("login vagy sign up?-->")
 
-if login_reg=="Regisztráció":
+if login_reg.lower()=="sign up":
+  nev = input("Mi az elso neved?---->")
+  nev2 = input("Mi a második neved?--->")
+  password=input("Írj be egy jelszót--->")
+  password_again=input("Írja be a jelszót mégegyszer--->")
+
+  jhfudg = 0
+  while jhfudg < 9999999999:
+   if password != password_again:
+    print("Jelszo sikertelen")
+    jhfudg += 1
+
+   if password==password_again:
+    print("Jelszó sikeresen létrehozva")
+    break
+
+  email=input("Mi az email címed?--->")
+  x = nev[0].upper() + nev[1:].lower()
+  y = nev2[0].upper() + nev2[1:].lower()
+  xy = x + y
+  d = "Nev-->"
+  with open("nevek.txt","r+") as f:
+   data = f.read()
+   f.write(d + str(xy) + "-->" + str(password) +"-->" + str(email) + "\n")   
+   f.close()  
+   print("Fiók Sikeresen lérehozva!!")
   
 
-if login_reg=="Belépés":    
+if login_reg.lower()=="login":    
  nev = input("Mi az elso neved?---->")
  if nev == "fk=%!876)=//=UVhH=(%!§dkdj78756)":
    print("Admin")
@@ -33,7 +58,7 @@ while ix < 999999999:
     print("Ez a link sajnos már használva van!")
     print("Próbálja újra!")
 
-    ix + 1
+    ix += 1
 
   else:
     with open("nevek.txt","r+") as f:
