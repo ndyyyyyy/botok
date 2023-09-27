@@ -11,8 +11,19 @@ login_reg = input("login vagy sign up?-->")
 if login_reg.lower()=="sign up":
   nev = input("Mi az elso neved?---->")
   nev2 = input("Mi a második neved?--->")
+password_while = 0
+while password_while < 99999999999999999999:
+  print("A jelszónak 8-16 karakterből kell álina!!")
   password=input("Írj be egy jelszót--->")
   password_again=input("Írja be a jelszót mégegyszer--->")
+
+  if len(password) >= 8 and len(password) <= 16:
+    print("jelszó megfelelő hosszuságú!")
+    break
+
+  else:
+    password_while + 1   
+
 
 
 jhfudg = 0
@@ -22,7 +33,7 @@ while jhfudg < 9999999999:
     print("Jelszó sikeresen létrehozva")
     break
   elif password != password_again:
-    print("Jelszo sikertelen")
+    print("De a jelszo sikertelen, nem eggyezik meg")
     password=input("Írj be egy jelszót--->")
     password_again=input("Írja be a jelszót mégegyszer--->")
     jhfudg + 1
@@ -59,11 +70,12 @@ while ix < 999999999:
   link = input("Írd ide a linket---->")
   link2 = link.lower()
   xylink = "--->" + link2
+  d = "Nev-->"
   if xylink in data:
     print("Ez a link sajnos már használva van!")
     print("Próbálja újra!")
 
-    ix += 1
+    ix + 1
 
   else:
     with open("nevek.txt","r+") as f:
@@ -111,6 +123,6 @@ while i < 9999999999999999:
     break
    
    else:
-    i += 1
+    i + 1
 
    
