@@ -11,20 +11,31 @@ login_reg = input("login vagy sign up?-->")
 if login_reg.lower()=="sign up":
   nev = input("Mi az elso neved?---->")
   nev2 = input("Mi a második neved?--->")
-  password=input("Írj be egy jelszót--->")
-  password_again=input("Írja be a jelszót mégegyszer--->")
-
-  jhfudg = 0
-  while jhfudg < 9999999999:
+  password_while = 0
+  while password_while < 99999999999999999999:
+   print("A jelszónak 8-16 karakterből kell álina!")
    password=input("Írj be egy jelszót--->")
    password_again=input("Írja be a jelszót mégegyszer--->")
-   if password != password_again:
-    print("Jelszo sikertelen")
-    jhfudg += 1
+   if len(password) >= 8 and len(password) <= 16:
+     print("Jelszó megfelelő hosszúságú!")
+     break
+    
+   else:
+     password_while + 1
 
-   if password==password_again:
+jhfudg = 0
+while jhfudg < 9999999999999999999:
+
+  if password==password_again:
     print("Jelszó sikeresen létrehozva")
     break
+  elif password != password_again:
+    print("De a jelszo sikertelen, nem egyezik meg!")
+    password=input("Írj be egy jelszót--->")
+    password_again=input("Írja be a jelszót mégegyszer--->")
+    jhfudg + 1
+
+
   else:
    email=input("Mi az email címed?--->")
    x = nev[0].upper() + nev[1:].lower()
@@ -36,7 +47,7 @@ if login_reg.lower()=="sign up":
     f.write(d + str(xy) + "-->" + str(password) +"-->" + str(email) + "\n")   
     f.close()  
     print("Fiók Sikeresen lérehozva!!")
-  
+    break
 
 if login_reg.lower()=="login":    
  nev = input("Mi az elso neved?---->")
@@ -52,7 +63,7 @@ if login_reg.lower()=="login":
 
 
 ix = 0
-while ix < 999999999:
+while ix < 99999999999999999:
   link = input("Írd ide a linket---->")
   link2 = link.lower()
   xylink = "--->" + link2
