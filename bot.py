@@ -14,27 +14,32 @@ if login_reg.lower()=="sign up":
   password=input("Írj be egy jelszót--->")
   password_again=input("Írja be a jelszót mégegyszer--->")
 
-  jhfudg = 0
-  while jhfudg < 9999999999:
-   if password != password_again:
-    print("Jelszo sikertelen")
-    jhfudg += 1
 
-   if password==password_again:
+jhfudg = 0
+while jhfudg < 9999999999:
+
+  if password==password_again:
     print("Jelszó sikeresen létrehozva")
     break
+  elif password != password_again:
+    print("Jelszo sikertelen")
+    password=input("Írj be egy jelszót--->")
+    password_again=input("Írja be a jelszót mégegyszer--->")
+    jhfudg + 1
 
-  email=input("Mi az email címed?--->")
-  x = nev[0].upper() + nev[1:].lower()
-  y = nev2[0].upper() + nev2[1:].lower()
-  xy = x + y
-  d = "Nev-->"
-  with open("nevek.txt","r+") as f:
-   data = f.read()
-   f.write(d + str(xy) + "-->" + str(password) +"-->" + str(email) + "\n")   
-   f.close()  
-   print("Fiók Sikeresen lérehozva!!")
-  
+
+  else:
+   email=input("Mi az email címed?--->")
+   x = nev[0].upper() + nev[1:].lower()
+   y = nev2[0].upper() + nev2[1:].lower()
+   xy = x + y
+   d = "Nev-->"
+   with open("nevek.txt","r+") as f:
+    data = f.read()
+    f.write(d + str(xy) + "-->" + str(password) +"-->" + str(email) + "\n")   
+    f.close()  
+    print("Fiók Sikeresen lérehozva!!")
+    break
 
 if login_reg.lower()=="login":    
  nev = input("Mi az elso neved?---->")
