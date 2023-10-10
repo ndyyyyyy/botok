@@ -46,21 +46,42 @@ if login_reg.lower()=="sign up":
   d = "Nev-->"
   with open("nevek.txt","r+") as f:
      data = f.read()
-     f.write(d + str(xy) + "-->" + str(password) +"-->" + str(email) + "\n")   
+     f.write(d + str(xy) + "--->" + str(password) +"---->" + str(email) +"-----I" "\n")   
      f.close()  
      print("Fiók Sikeresen lérehozva!!")
 
 
 if login_reg.lower()=="login":    
- nev = input("Mi az elso neved?---->")
- if nev == "fk=%!876)=//=UVhH=(%!§dkdj78756)":
+ loginemail = input("Mi az email címe?---->")
+ if loginemail == "fk=%!876)=//=UVhH=(%!§dkdj78756)":
    print("Admin")
- elif nev != "fk=%!876)=//=UVhH=(%!§dkdj78756)":
-  nev2 = input("Mi a második neved?--->")
-  x = nev[0].upper() + nev[1:].lower()
-  y = nev2[0].upper() + nev2[1:].lower()
-  xy = x + y
-  d = "Nev-->"
+ elif loginemail != "fk=%!876)=//=UVhH=(%!§dkdj78756)":
+  loginpass = input("Kérem írja be a jelszavát--->")
+
+ print("DDDD")
+
+ f = open("nevek.txt")
+ datae = f.read
+ szo=datae
+ if szo.index((loginemail)) > -1:
+    print("bennevan")
+ else:
+    print("nincs benne")
+
+
+
+ for loginemail in f:
+    elemek = loginemail.strip().split("---->")
+    elemek2 = elemek[1].split("-----I")
+    nev = elemek2[0]
+    while True:
+        if nev[-1] == "-":
+            nev = nev[0:len(nev)-1]
+        else:
+            break
+    print(nev)
+
+ f.close()   
 
 
 
