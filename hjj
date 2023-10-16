@@ -1,0 +1,11 @@
+f = open("jarmu.txt")
+lista =[]
+for sor in f:
+    elemek = sor.strip().split(" ")
+    adatok = []
+    adatok.append(int(elemek[0]))
+    adatok.append(int(elemek[1]))
+    adatok.append(int(elemek[2]))
+    adatok.append(elemek[3]) 
+    lista.append(adatok)
+f.close()    
