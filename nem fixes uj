@@ -18,7 +18,6 @@ if login_reg.lower()=="sign up":
    password_again=input("Írja be a jelszót mégegyszer--->")
 
    if len(password) >= 8 and len(password) <= 16:
-    print("jelszó megfelelő hosszuságú!")
     break
 
    else:
@@ -43,49 +42,25 @@ if login_reg.lower()=="sign up":
   x = nev[0].upper() + nev[1:].lower()
   y = nev2[0].upper() + nev2[1:].lower()
   xy = x + y
-  d = "Nev,"
   with open("nevek.txt","r+") as f:
      data = f.read()
-     f.write("{"+d + str(xy) + "," + str(email) +"," + str(password) +"," +"}"+ "\n")   
+     f.write(str(xy) +","+ str(email) +","+ str(password) +","+"\n")   
      f.close()  
      print("Fiók Sikeresen lérehozva!!")
 
-
-if login_reg.lower()=="login":    
+if login_reg.lower()=="login":   
  loginemail = input("Mi az email címe?---->")
  if loginemail =="fk=%!876)=//=UVhH=(%!§dkdj78756)":
    print("Admin")
   
  elif loginemail !="fk=%!876)=//=UVhH=(%!§dkdj78756)":
   loginpass = input("Kérem írja be a jelszavát--->")
-
- print("DDDD")
-
-
- f = open("nevek.txt")
- datae = f.read
- szo=datae
- if szo.index((loginemail)) > -1:
-    print("bennevan")
- else:
-    print("nincs benne")
-
-
-
- for loginemail in f:
-    elemek = loginemail.strip().split("---->")
-    elemek2 = elemek[1].split("-----I")
-    nev = elemek2[0]
-    while True:
-        if nev[-1] == "-":
-            nev = nev[0:len(nev)-1]
-        else:
-            break
-    print(nev)
-
- f.close()   
-
-
+  with open("nevek.txt", "a+") as f:
+     for sor in f:
+      elemek = sor.strip().split(",")
+      valasztas = sor[elemek[loginemail][loginpass]]
+      print(valasztas)
+      print("DDDD")
 
  ix = 0
  while ix < 999999999:
@@ -100,16 +75,13 @@ if login_reg.lower()=="login":
     ix + 1
 
   else:
-    with open("nevek.txt","r+") as f:
-     nevdata = f.read()
-     nevfinderr = str(nevdata.find(xy))
-     print(nevfinderr)
-     nevfinder = nevfinderr[f.readline(-1)]
-     print(nevfinder)
-     f.write(d + str(xy) + xylink + "\n")   
-     f.close()  
-     print("Sikeresen hozza adva!")
-     break
+    with open("nevek.txt", "a+") as f:
+     for sor in f:
+      elemek = sor.strip().split(",")
+      print(sor)
+
+     
+f.close()
 
 
 
@@ -125,30 +97,20 @@ while i < 9999999999999999:
     break
    
    if help.lower() =="adataim":
-      nev11 = input("Mi az elso neved?---->")
-      nev22 = input("Mi a második neved?--->")
-      xd = nev11[0].upper() + nev11[1:].lower()
-      yd = nev22[0].upper() + nev22[1:].lower()
-      xyd = xd + yd
-      print(xyd)
-      d = "Nev-->"
-   
-      with open("nevek.txt", "r") as f:
-        data = f.read()
-       # print(data)
-        adataimm = data.find(xyd)
-        print(len(xyd))
-        print(adataimm)
-        getdata = data[adataimm : adataimm+len(xyd)]
-        print(getdata)
-        f.close()
-        break
+    f = open("nevek.txt")
+    osszesSor = f.readlines()
+    f.close()
+    print("\n4. feladat")
+    adataim_email = input("Kérem írja be az EMAIL címét---")
+
+
 
    if help.lower() =="nem":
     print("Program vége!!")
     break
    
    else:
+    print("Hiba, helytelen szóhasznála, próbálja újra")
     i + 1
 
    
