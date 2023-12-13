@@ -1,0 +1,25 @@
+i = 0
+
+szabályzat = "fffff"
+
+while i < 9999999999999999:
+   help = input('Kell segítség?- "igen" vagy "nem" vagy "adataim"--->')
+   if help.lower() =="igen":
+    print(szabályzat)
+    break
+   
+   if help.lower() =="adataim":
+    f = open("nevek.txt")
+    osszesSor = f.readlines()
+    f.close()
+    adataim_email = input("Kérem írja be az EMAIL címét---")
+
+
+
+   if help.lower() =="nem":
+    print("Program vége!!")
+    break
+   
+   else:
+    print("Hiba, helytelen szóhasznála, próbálja újra")
+    i + 1
