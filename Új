@@ -1,20 +1,57 @@
+import os
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+
+
+with open("nevek.txt", "r") as f:
+    data = f.read()
+    f.close()  
+
+nev = input("Mi az elso neved?---->")
+nev2 = input("Mi a második neved?--->")
+password_while = 0
+while password_while < 99999999999999999999:
+   print("A jelszónak 8-16 karakterből kell álina!!")
+   password=input("Írj be egy jelszót--->")
+
+   if len(password) >= 8 and len(password) <= 16:
+    password_again=input("Írja be a jelszót mégegyszer--->")
+    break
+
+   else:
+    password_while + 1   
+
+jhfudg = 0
+while jhfudg < 9999999999999999999:
+ if password==password_again and len(password) >= 8 and len(password) <= 16:
+    print("Jelszó sikeresen létrehozva")
+    break
+ elif password != password_again:
+    print("Jelszo nem eggyezik meg!")
+    password=input("Írj be egy jelszót--->")
+    password_again=input("Írja be a jelszót mégegyszer--->")
+    jhfudg + 1
+    
+
+email=input("Mi az email címed?--->")
+x = nev[0].upper() + nev[1:].lower()
+y = nev2[0].upper() + nev2[1:].lower()
+xy = x + y
+with open("nevek.txt","r+") as f:
+     data = f.read()
+     f.write(str(xy) +","+ str(email) +","+ str(password) +","+"\n")   
+     f.close()  
+     print("Fiók Sikeresen lérehozva!!")
+
 i = 0
 
-szabályzat = "fffff"
 
 while i < 9999999999999999:
-   help = input('Kell segítség?- "igen" vagy "nem" vagy "adataim"--->')
+   help = input('Meg szeretnéd nézni az adataid? - "igen" vagy "nem"--->')
    if help.lower() =="igen":
-    print(szabályzat)
+    print("Dolgozunk rajta!!")
     break
-   
-   if help.lower() =="adataim":
-    f = open("nevek.txt")
-    osszesSor = f.readlines()
-    f.close()
-    adataim_email = input("Kérem írja be az EMAIL címét---")
-
-
 
    if help.lower() =="nem":
     print("Program vége!!")
@@ -22,4 +59,4 @@ while i < 9999999999999999:
    
    else:
     print("Hiba, helytelen szóhasznála, próbálja újra")
-    i + 1
+    i + 1     
