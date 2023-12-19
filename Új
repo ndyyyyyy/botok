@@ -47,9 +47,11 @@ y = nev2[0].upper() + nev2[1:].lower()
 xy = x + y
 with open("nevek.txt","r+") as f:
      data = f.read()
-     f.write(str(id) +","+ str(xy) +","+ str(email) +","+ str(password) +","+"\n")   
+     f.write(str(id) +","+ str(xy) +","+ str(email) +","+ str(password) +"\n")   
      f.close()  
      print("Fiók Sikeresen lérehozva!!")
+     print("Ez az azonosítód(id)--->" + str(id))
+     
 
 i = 0
 
@@ -57,13 +59,19 @@ i = 0
 while i < 9999999999999999:
    help = input('Meg szeretnéd nézni az adataid? - "igen" vagy "nem"--->')
    if help.lower() =="igen":
-    print("Dolgozunk rajta!!")
-    break
+    idkeres = input("írja be az id---->")
+    f = open("nevek.txt")
+    for sor in f:
+      elemek = sor.split(',')
+      if elemek[0] == idkeres:
+        print(sor)
+        break
+    f.close()
 
    if help.lower() =="nem":
     print("Program vége!!")
     break
    
    else:
-    print("Hiba, helytelen szóhasznála, próbálja újra")
+    print("Hiba, helytelen szóhasznála, próbálja újra!")
     i + 1     
