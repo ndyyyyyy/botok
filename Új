@@ -1,4 +1,5 @@
 import os
+import random
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -10,6 +11,12 @@ with open("nevek.txt", "r") as f:
 
 nev = input("Mi az elso neved?---->")
 nev2 = input("Mi a második neved?--->")
+x = nev[0].upper() + nev[1:].lower()
+y = nev2[0].upper() + nev2[1:].lower()
+xy = x + y
+id = x[0] + x[-1] + y[0] + y[3] + y[-1] + str(random.randrange(1, 99999, 3))
+
+
 password_while = 0
 while password_while < 99999999999999999999:
    print("A jelszónak 8-16 karakterből kell álina!!")
@@ -40,7 +47,7 @@ y = nev2[0].upper() + nev2[1:].lower()
 xy = x + y
 with open("nevek.txt","r+") as f:
      data = f.read()
-     f.write(str(xy) +","+ str(email) +","+ str(password) +","+"\n")   
+     f.write(str(id) +","+ str(xy) +","+ str(email) +","+ str(password) +","+"\n")   
      f.close()  
      print("Fiók Sikeresen lérehozva!!")
 
