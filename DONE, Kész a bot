@@ -64,10 +64,10 @@ while i < 9999999999999999:
     for sor in f:
       elemek = sor.split(',')
       if elemek[0] == idkeres:
-        print(sor)
+        print("\n"+sor)
         break
     f.close()
-
+    break
    if help.lower() =="nem":
     print("Program vége!!")
     break
