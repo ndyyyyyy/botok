@@ -32,7 +32,7 @@ while password_while < 99999999999999999999:
 still_password = 0
 while still_password < 9999999999999999999:
  if password==password_again and len(password) >= 8 and len(password) <= 16:
-    print("Your password had been successfully created!")
+    print("Your password has been successfully created!")
     break
  elif password != password_again:
     print("The password does not match!")
@@ -49,7 +49,7 @@ with open("nevek.txt","r+") as f:
      data = f.read()
      f.write(str(id) +","+ str(xy) +","+ str(email) +","+ str(password) +"\n")   
      f.close()  
-     print("Your acconut had been successfully created!!")
+     print("Your account has been successfully created!!")
      print("Enter your id!--->" + str(id))
      
 
