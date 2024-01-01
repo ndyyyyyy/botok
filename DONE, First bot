@@ -19,7 +19,7 @@ id = x[0] + x[-1] + y[0] + y[3] + y[-1] + str(random.randrange(1, 99999, 3))
 
 password_while = 0
 while password_while < 99999999999999999999:
-   print("The password must be between 8-16!!")
+   print("The password must be between 8-16 words!!")
    password=input("Enter a password--->")
 
    if len(password) >= 8 and len(password) <= 16:
