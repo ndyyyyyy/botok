@@ -23,7 +23,7 @@ while password_while < 99999999999999999999:
    password=input("Enter a password--->")
 
    if len(password) >= 8 and len(password) <= 16:
-    password_again=input("Enter your paswword again--->")
+    password_again=input("Enter your pasword again--->")
     break
 
    else:
