@@ -9,8 +9,8 @@ with open("nevek.txt", "r") as f:
     data = f.read()
     f.close()  
 
-nev = input("Mi az elso neved?---->")
-nev2 = input("Mi a második neved?--->")
+nev = input("What is your forename?---->")
+nev2 = input("What is your surname?--->")
 x = nev[0].upper() + nev[1:].lower()
 y = nev2[0].upper() + nev2[1:].lower()
 xy = x + y
@@ -19,29 +19,29 @@ id = x[0] + x[-1] + y[0] + y[3] + y[-1] + str(random.randrange(1, 99999, 3))
 
 password_while = 0
 while password_while < 99999999999999999999:
-   print("A jelszónak 8-16 karakterből kell álina!!")
-   password=input("Írj be egy jelszót--->")
+   print("The password must be between 8-16!!")
+   password=input("Enter a password--->")
 
    if len(password) >= 8 and len(password) <= 16:
-    password_again=input("Írja be a jelszót mégegyszer--->")
+    password_again=input("Enter your paswword again--->")
     break
 
    else:
     password_while + 1   
 
-jhfudg = 0
-while jhfudg < 9999999999999999999:
+still_password = 0
+while still_password < 9999999999999999999:
  if password==password_again and len(password) >= 8 and len(password) <= 16:
-    print("Jelszó sikeresen létrehozva")
+    print("Your password had been sucessfully created!")
     break
  elif password != password_again:
-    print("Jelszo nem eggyezik meg!")
-    password=input("Írj be egy jelszót--->")
-    password_again=input("Írja be a jelszót mégegyszer--->")
-    jhfudg + 1
+    print("The password does not match!")
+    password=input("Enter a password--->")
+    password_again=input("Enter your password again!--->")
+    still_password + 1
     
 
-email=input("Mi az email címed?--->")
+email=input("Enter your e-mail--->")
 x = nev[0].upper() + nev[1:].lower()
 y = nev2[0].upper() + nev2[1:].lower()
 xy = x + y
@@ -49,29 +49,28 @@ with open("nevek.txt","r+") as f:
      data = f.read()
      f.write(str(id) +","+ str(xy) +","+ str(email) +","+ str(password) +"\n")   
      f.close()  
-     print("Fiók Sikeresen lérehozva!!")
-     print("Ez az azonosítód(id)--->" + str(id))
+     print("Your acconut had been sucessfully created!!")
+     print("Enter your id!--->" + str(id))
      
 
 i = 0
 
-
 while i < 9999999999999999:
-   help = input('Meg szeretnéd nézni az adataid? - "igen" vagy "nem"--->')
-   if help.lower() =="igen":
-    idkeres = input("írja be az id---->")
+   help = input('Would you like to see your personal information? - "yes" or "no"--->')
+   if help.lower() =="yes":
+    id_search = input("Enter your id---->")
     f = open("nevek.txt")
-    for sor in f:
-      elemek = sor.split(',')
-      if elemek[0] == idkeres:
-        print("\n"+sor)
+    for line in f:
+      data = line.split(',')
+      if data[0] == id_search:
+        print("\n"+line)
         break
     f.close()
     break
-   if help.lower() =="nem":
-    print("Program vége!!")
+   if help.lower() =="no":
+    print("End of the program!!")
     break
    
    else:
-    print("Hiba, helytelen szóhasznála, próbálja újra!")
+    print("Error,inproper usage of words, try again!")
     i + 1     
